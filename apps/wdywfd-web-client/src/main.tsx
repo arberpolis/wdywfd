@@ -1,13 +1,20 @@
-import './style.css';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { App } from './components';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+import './style.css';
+import { store } from './store';
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
-ReactDOM.createRoot(app).render(
+const root = createRoot(app);
+
+const page = (
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={store}>
+      <h1>Work in Progress</h1>
+    </Provider>
+  </React.StrictMode>
 );
+
+root.render(page);

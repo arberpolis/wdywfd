@@ -1,5 +1,10 @@
 module.exports = {
   root: true,
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
   ignorePatterns: ['**/*'],
   plugins: ['@nrwl/nx'],
   overrides: [
