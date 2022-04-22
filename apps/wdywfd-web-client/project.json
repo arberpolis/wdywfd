@@ -1,0 +1,61 @@
+{
+  "root": "apps/wdywfd-web-client",
+  "sourceRoot": "apps/wdywfd-web-client/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nxext/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/wdywfd-web-client",
+        "baseHref": "/",
+        "configFile": "@nxext/vite/plugins/vite"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/wdywfd-web-client/src/environments/environment.ts",
+              "with": "apps/wdywfd-web-client/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/vite:dev",
+      "options": {
+        "outputPath": "dist/apps/wdywfd-web-client",
+        "baseHref": "/",
+        "configFile": "@nxext/vite/plugins/vite"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/wdywfd-web-client/src/environments/environment.ts",
+              "with": "apps/wdywfd-web-client/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/wdywfd-web-client/**/*.{ts,js,tsx,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/wdywfd-web-client"],
+      "options": {
+        "jestConfig": "apps/wdywfd-web-client/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

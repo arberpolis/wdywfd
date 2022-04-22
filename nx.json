@@ -4,7 +4,7 @@
     "defaultBase": "main"
   },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nxext/vite"
   },
   "implicitDependencies": {
     "package.json": {
@@ -15,14 +15,10 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "NDM1NDUyZTItN2Y1ZS00MWI0LTgxMGItMjdlYzk3MjZhN2I1fHJlYWQtd3JpdGU="
       }
     }
   },
@@ -33,5 +29,16 @@
         "projects": "dependencies"
       }
     ]
-  }
+  },
+  "generators": {
+    "@nxext/vite": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "wdywfd-web-client"
 }
