@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChannelList should render correctly 1`] = `
+<div
+  className="channel-list"
+>
+  <div
+    className="channel-list-header"
+  >
+    <div
+      className="channel-list-header-title"
+    >
+      <h3>
+        team
+      </h3>
+    </div>
+  </div>
+  <div
+    className="channel-list-body"
+  >
+    <div
+      className="channel"
+    >
+      Channel 1
+    </div>
+    <div
+      className="channel"
+    >
+      Channel 2
+    </div>
+  </div>
+</div>
+`;
